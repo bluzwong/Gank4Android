@@ -9,15 +9,17 @@ import android.os.Bundle
 import android.support.annotation.Nullable
 import android.support.design.widget.FloatingActionButton
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import android.view.View
 import android.view.animation.AccelerateDecelerateInterpolator
 import android.widget.TextView
 import groovy.transform.CompileStatic
 import zhou.gank.io.database.DatabaseManager
 import zhou.gank.io.model.Bookmark
+import zhou.gank.io.test.TestJava
 import zhou.gank.io.ui.activity.HomeActivity
 
-@CompileStatic
+
 class MainActivity extends AppCompatActivity {
 
     FloatingActionButton fab
@@ -28,6 +30,7 @@ class MainActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         App.setTheme(this)
         super.onCreate(savedInstanceState)
+        TestJava.print("heihei")
         if (App.hasStarted) {
             Open()
             return
@@ -83,5 +86,10 @@ class MainActivity extends AppCompatActivity {
     public void Open(View view = null) {
         startActivity(new Intent(this, HomeActivity.class));
         finish()
+    }
+
+
+    static def log(msg) {
+        Log.i("ccf", msg as String);
     }
 }

@@ -55,10 +55,10 @@ class App extends Application {
 
         DatabaseManager.init(this)
 
-        cardDark = getColor(R.color.cardview_dark_background)
-        cardLight = getColor(R.color.cardview_light_background)
-        textDark = getColor(R.color.material_grey_50)
-        textLight = getColor(R.color.material_grey_1000)
+        cardDark = getColour(R.color.cardview_dark_background)
+        cardLight = getColour(R.color.cardview_light_background)
+        textDark = getColour(R.color.material_grey_50)
+        textLight = getColour(R.color.material_grey_1000)
 
         mainHandler = new Handler(Looper.getMainLooper())
 
@@ -98,7 +98,7 @@ class App extends Application {
         return app.getResources().getString(res);
     }
 
-    static int getColor(int res) {
+    static int getColour(int res) {
         return app.getResources().getColor(res)
     }
 
